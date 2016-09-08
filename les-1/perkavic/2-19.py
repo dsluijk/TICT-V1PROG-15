@@ -3,7 +3,7 @@ import math;
 
 # Helper functions
 def calcLengthFromCenter(x, y):
-    return math.sqrt(math.pow(x, 2)+ math.pow(y, 2));
+    return math.sqrt(math.pow(x, 2) + math.pow(y, 2));
 
 # A
 print(calcLengthFromCenter(0, 0) < 10);
