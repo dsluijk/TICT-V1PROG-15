@@ -1,7 +1,7 @@
 import datetime;
 
 def inputName():
-    name = str(raw_input('Naam hardloper: '));
+    name = str(input('Naam hardloper: '));
     if(name == ''):
         return;
     textFile = open('./4_4-file.txt', 'a');
@@ -11,5 +11,5 @@ def inputName():
 
 while True:
     inputName();
-    if(str(raw_input('Wilt u nog een hardloper invoeren? (Y/n) ')) == 'n'):
+    if(str(input('Wilt u nog een hardloper invoeren? (Y/n) ')) == 'n'):
         exit();
