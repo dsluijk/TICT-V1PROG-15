@@ -12,19 +12,19 @@ stations = ['Schagen', 'Heerhugowaard', 'Alkmaar', 'Castricum', 'Zaandam',
 
 print('De volgende stations zijn beschikbaar: ' + ', '.join(stations));
 
-while not validStartStation:
-    startStation = str(input('Wat is je beginstation: '));
-    if(stations.count(startStation) > 0):
-        validStartStation = True;
-    else:
-        print('Fout: Dit station bestaat niet.');
+startStation = str(input('Wat is je beginstation: '));
+if(stations.count(startStation) > 0):
+    validStartStation = True;
+else:
+    print('Fout: Dit station bestaat niet, Schagen toegekend.');
+    startStation = 'Schagen';
 
-while not validEndStation:
-    endStation = str(input('Wat is je endstation: '));
-    if(stations.count(endStation) > 0 & stations.index(startStation) < stations.index(endStation)):
-        validEndStation = True;
-    else:
-        print('Fout: Dit station bestaat niet of heeft een lagere index.');
+endStation = str(input('Wat is je endstation: '));
+if(stations.count(endStation) > 0 & stations.index(startStation) < stations.index(endStation)):
+    validEndStation = True;
+else:
+    print('Fout: Dit station bestaat niet of heeft een lagere index, Maastricht toegekend.');
+    endStation = 'Maastricht';
 
 startStationIndex = stations.index(startStation);
 endStationIndex = stations.index(endStation);
