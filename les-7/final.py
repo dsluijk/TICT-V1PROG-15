@@ -76,7 +76,7 @@ def getAvaliable():
     unavaliable = 0;
     for row in codeReader:
         unavaliable = unavaliable + 1;
-    return 12-unavaliable;
+    return int(12-unavaliable);
 
 """
 Creates a new user a user to the file
@@ -84,17 +84,18 @@ Creates a new user a user to the file
 @return {Object|Null} Object containing the code and the safe id. Null if no safe available.
 """
 def saveUser():
-    if(getAvaliable == 0):
+    avaliable = getAvaliable();
+    if(avaliable == 0):
         csvfile.close();
         return;
-    csvfile = open('codes.csv', 'w', newline='');
+    csvfile = open('codes.csv', 'a', newline='');
     codeWriter = csv.writer(csvfile);
     code = getCode();
-    codeWriter.writerow([avaliable[0], code]);
+    codeWriter.writerow([avaliable, code]);
     csvfile.close();
     return {
         'code': code,
-        'safe': avaliable[0]
+        'safe': avaliable
     };
 
 """

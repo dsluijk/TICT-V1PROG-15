@@ -23,7 +23,7 @@ Inlezen van het eind station
 @param {String} Het beginstation
 @return {String} Een valide station
 """
-def inlezen_eindpunt(startStation='Schagen'):
+def inlezen_eindpunt(startStation):
     while True:
         endStation = str(input('Wat is je endstation: '));
         if((stations.count(endStation) > 0) & (stations.index(startStation) < stations.index(endStation))):
